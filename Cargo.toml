@@ -1,0 +1,28 @@
+[package]
+name = "hakkit"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+categories = ["parser-implementations"]
+keywords = ["parser", "binary-format"]
+homepage = "https://github.com/exefer/hakkit"
+description = "Reusable Nintendo binary format parsing library"
+repository = "https://github.com/exefer/hakkit"
+license = "MIT OR Apache-2.0"
+exclude = ["specification/"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--generate-link-to-definition"]
+
+[dependencies]
+lz4_flex = { version = "0.12", optional = true }
+zstd = { version = "0.13", optional = true }
+
+[features]
+default = []
+compression = ["dep:lz4_flex", "dep:zstd"]
+
+[[example]]
+name = "program"
+path = "examples/program.rs"

@@ -1,0 +1,7 @@
+/target
+Cargo.lock
+prod.keys
+title.keys
+*.nca
+*.nsp
+*.xci
